@@ -102,7 +102,7 @@ class NutritionCalculator:
             'Объем инфузии без жиров': self.res_volume(),
             "Белки": self.res_prot(),
             "Углеводы": self.res_carbohydrates(),
-            'Вода для инъекций': self.res_H2O(),
+            'Вода для инъекций': self.res_h2O(),
             "Дотации Na": self.res_na(),
             "Дотация К": self.res_k(),
             "Дотация Ca": self.res_ca(),
@@ -178,8 +178,10 @@ class InputScreen(Screen):
         volume = float(self.inputs['Общий объем'].text)
         protein = float(self.inputs['Белки'].text)
         fat = float(self.inputs['Жиры'].text)
-        soluvit = float(self.inputs['Солувит'].text)
-        vitalipid = float(self.inputs['Виталипид'].text)
+        soluvit = float(
+            self.inputs['Солувит - рекомендуемая доза 1 мг/кг/сут'].text)
+        vitalipid = float(
+            self.inputs['Виталипид - рекомендуемая доза 4 мг/кг/сут'].text)
         carbohydrates = float(self.inputs['Углеводы'].text)
         Na = float(self.inputs['Na'].text)
         K = float(self.inputs['K'].text)
